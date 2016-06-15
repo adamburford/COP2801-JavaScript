@@ -18,11 +18,8 @@ function makeCalendar(month, year) {
 	var monthsOfYear = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 	
 	var daysInMonth;
-	if (month == 2) {
-		daysInMonth = 28;
-		if (year % 4 == 0)
-			daysInMonth++;
-	}
+	if (month == 2)
+		daysInMonth = 28 + !(year & 3);
 	else
 		daysInMonth = 30 + (month & 1);
 	
